@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    /* Removed the forced flex-centering so the Login page can breathe */
+    min-height: 100vh;
+    background-color: #e5e7eb; /* Light gray background for the whole site */
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+  }
+}
+
+/* =========================================
+   Mobile App Container (Used by MainLayout)
+   ========================================= */
+#app-container {
+  width: 100%;
+  max-width: 400px;
+  height: 750px;
+  
+  /* This centers the mobile frame on desktop screens */
+  margin: 2rem auto; 
+  
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+#app-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-top: 56px;
+  padding-bottom: 72px;
+  scrollbar-width: none; /* Firefox */
+}
+
+#app-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
