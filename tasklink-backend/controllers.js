@@ -1,4 +1,4 @@
-const { User, Task, Message, Review } = require('./models'); // Updated path
+const { User, Task, Message, Review } = require('./models');
 
 async function registerUser(req, res) {
     const { name, role, location } = req.body;
@@ -39,4 +39,38 @@ async function getNearbyTasks(req, res) {
     }
 }
 
-module.exports = { registerUser, createTask, getNearbyTasks };
+// Added Feature: Real-time Messaging Logic
+async function sendMessage(req, res) {
+    const { sender_id, receiver_id, content } = req.body;
+    if (!sender_id || !receiver_id || !content) {
+        return res.status(400).json({ status: "error", message: "Incomplete message data" });
+    }
+    try {
+        await Message.create({ sender_id, receiver_id, content });
+        return res.status(201).json({ status: "success", message: "Message sent" });
+    } catch (error) {
+        return res.status(500).json({ status: "error", message: error.message });
+    }
+}
+
+// Added Feature: Rating and Review Logic
+async function submitReview(req, res) {
+    const { task_id, reviewer_id, rating, comment } = req.body;
+    if (!task_id || !rating) {
+        return res.status(400).json({ status: "error", message: "Rating and Task ID required" });
+    }
+    try {
+        await Review.create({ task_id, reviewer_id, rating, comment });
+        return res.status(201).json({ status: "success", message: "Review submitted successfully" });
+    } catch (error) {
+        return res.status(500).json({ status: "error", message: error.message });
+    }
+}
+
+module.exports = { 
+    registerUser, 
+    createTask, 
+    getNearbyTasks, 
+    sendMessage, 
+    submitReview 
+};
