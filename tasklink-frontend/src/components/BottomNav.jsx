@@ -7,7 +7,7 @@ export default function BottomNav() {
     const location = useLocation();
 
     return (
-        <nav className="bg-white border-t border-gray-100 p-3 flex justify-around fixed bottom-0 w-full max-w-[400px] z-50">
+        <nav className="bg-white border-t border-gray-100 p-3 flex justify-around shrink-0 z-50">
             
             {/* Home */}
             <button id="nav-home-btn" onClick={function() { navigate('/home'); }} className={`flex flex-col items-center ${location.pathname === '/home' ? 'text-task-primary' : 'text-gray-400'}`}>

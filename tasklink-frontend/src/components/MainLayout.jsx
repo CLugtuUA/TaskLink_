@@ -19,7 +19,7 @@ export default function MainLayout() {
     const isSubPage = location.pathname.startsWith('/chat') || location.pathname === '/post';
 
     return (
-        <div id="app-container" className="flex flex-col h-screen bg-white">
+        <div id="app-container" className="flex flex-col bg-white">
             {/* OFFICIAL HEADER: Single & Persistent */}
             <header id="app-header" className="bg-white border-b border-gray-100 px-6 py-4 flex items-center justify-between shrink-0 z-30">
                 <div className="flex items-center gap-3">

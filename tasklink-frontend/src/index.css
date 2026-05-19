@@ -35,8 +35,6 @@
 #app-content {
   flex-grow: 1;
   overflow-y: auto;
-  padding-top: 56px;
-  padding-bottom: 72px;
   scrollbar-width: none; /* Firefox */
 }
 
