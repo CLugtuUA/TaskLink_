@@ -20,13 +20,13 @@ To run this prototype application locally, ensure you have **Node.js** and **Pos
 ### 1. Database Configuration (PostgreSQL)
 1. Open pgAdmin or SQL Shell (`psql`).
 2. Create a new database named `tasklink`:
-   
+   ```sql
    CREATE DATABASE tasklink;
 
+```
 
-
-4. Connect to the database and create the `Tasks` table:
-
+3. Connect to the database and create the `Tasks` table:
+```sql
 CREATE TABLE "Tasks" (
     id SERIAL PRIMARY KEY,
     poster_id INTEGER NOT NULL,
@@ -38,6 +38,7 @@ CREATE TABLE "Tasks" (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+```
 
 
 
@@ -100,3 +101,4 @@ npm run dev
 * **Post a Local Task:** Requesters can post localized chores with specific budgets.
 * **Browse Tasks:** A dynamic feed displays only tasks available within the geofenced area.
 * **Real-Time Match/Chat:** Users can communicate securely to coordinate details.
+
