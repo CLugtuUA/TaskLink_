@@ -20,13 +20,13 @@ To run this prototype application locally, ensure you have **Node.js** and **Pos
 ### 1. Database Configuration (PostgreSQL)
 1. Open pgAdmin or SQL Shell (`psql`).
 2. Create a new database named `tasklink`:
-   ```sql
+   
    CREATE DATABASE tasklink;
 
-```
 
-3. Connect to the database and create the `Tasks` table:
-```sql
+
+4. Connect to the database and create the `Tasks` table:
+
 CREATE TABLE "Tasks" (
     id SERIAL PRIMARY KEY,
     poster_id INTEGER NOT NULL,
@@ -38,7 +38,6 @@ CREATE TABLE "Tasks" (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-```
 
 
 
